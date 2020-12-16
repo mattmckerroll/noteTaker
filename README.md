@@ -19,12 +19,12 @@ This is an app where you can write notes, and save them. The notes will be prese
 
 ## Installation
 
-Download the files, open a terminal, run "npm install", then run "node app.js" at the file's location and follow the prompts. Once you are done, pop over to that fancy ./output folder and take a look at the AMAZING html file you just generated!
+visit the app [here](https://mattmcknotetaker.herokuapp.com/) and try it for yourself!
 
 
 ## Usage 
 
-Use this app to make team pages quickly and professionally!
+Use this app to make little notes for yourself.
 
 ## Credits
 
