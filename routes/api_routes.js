@@ -1,22 +1,24 @@
 const fs = require('fs');
 const db = require('../db/db.json');
-const path = require('path')
+const path = require('path');
 
+//it took me longer than i'd like to admit to figure out how to add in nanoid
 const { nanoid } = require("nanoid/non-secure");
 
 module.exports = app => {
 
 app.route("/api/notes")
-    // Grab the notes list 
+    // pull up the existing notes from the db
     .get(function (req, res) {
         res.json(db);
     })
 
-    // Add a new note to the json db file.
+    // Add a new note to the db file.
     .post(function (req, res) {
         let dbPath = path.join(__dirname, "../db/db.json");
         let newNote = req.body;
 
+        //this uses nanoid to quickly generate a unique ID 
         newNote.id = nanoid();
 
         // push to db.json.
@@ -36,7 +38,7 @@ app.route("/api/notes")
 
     app.delete("/api/notes/:id", function (req, res) {
         let dbPath = path.join(__dirname, "/db/db.json");
-        // request to delete note by id.
+        // delete note by id.
         for (let i = 0; i < db.length; i++) {
     
             if (db[i].id == req.params.id) {
